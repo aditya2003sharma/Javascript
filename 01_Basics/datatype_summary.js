@@ -72,3 +72,37 @@ console.log(typeof null)
 // object
 // function object
 //object
+
+
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++=
+
+//Stack(Primitive:GENERATED A COPY) and Heap(Non-Primitive:GENERATED A REFERENCE)
+
+
+let number1=1
+number2=number1
+number2=5
+console.log(number1)
+console.log(number2)
+
+
+
+let obj1={
+  name:"dummy",
+  age:19
+}
+
+obj2=obj1
+
+
+console.log(obj1)
+console.log(obj2)
+
+
+obj2.name="dirty"
+obj2.age=90
+
+
+console.log(obj1)
+console.log(obj2)
