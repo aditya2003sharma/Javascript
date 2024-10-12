@@ -31,3 +31,21 @@ console.log(newobj2)
 console.log(obj3)
 
 //has own property checks wheather a key is present
+
+
+//DESTRUCTURING in objects
+
+
+const course={
+  courseName:"jAavascript",
+  price:"freee",
+}
+
+const {courseName:Name}=course
+
+console.log(courseName)
+
+
+
+//API's
+
