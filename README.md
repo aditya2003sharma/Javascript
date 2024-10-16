@@ -1,4 +1,4 @@
-🚀 Learning JavaScript
+<h1>🚀 Learning JavaScript</h1>
 I'm currently on a journey to master JavaScript! 🛠️
 
 What I'm focusing on:
