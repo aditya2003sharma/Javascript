@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS PRACTICE</title>
+</head>
+<body>
+
+  <h1>Hello this is JS practice</h1>
+  <button id="start">Start</button>
+  <button id="stop">Stop</button>
+
+  <script>
+
+    const stop=function(){
+      console.log("Yes I am learning jS")
+    }
+     
+    let print
+    document.querySelector('#start').addEventListener('click',()=>{
+      print=setInterval(stop,1000)
+    })
+    document.querySelector('#stop').addEventListener('click',()=>{
+      clearInterval(print)
+      console.log('Printing Stopped')
+    })
+
+    
+
+  </script>
+  
+</body>
+</html>
