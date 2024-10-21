@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Color Generator</title>
+</head>
+<body>
+
+  <h2>Hello,this is a platform where you can change the background color randomly by clicking on <strong>Start</strong> button</h2>
+
+
+  <button id="start">Start</button>
+  <button id="stop">Stop</button>
+
+
+
+  <script>
+
+const GenerateColor = () => {
+  const hex = '0123456789ABCDEF';
+  let color = '#';
+
+  for (let i = 0; i < 6; i++) {
+    color += hex[Math.floor(Math.random() * 16)];
+  }
+  console.log(color)
+  return color;
+};
+
+let colorChangeInterval; // Variable to store the interval ID
+
+const startChangingColor = () => {
+  document.body.style.backgroundColor = GenerateColor();
+};
+
+document.querySelector('#start').addEventListener('click', () => {
+  // Start the interval only if it's not already running
+  if (!colorChangeInterval) {
+    colorChangeInterval = setInterval(startChangingColor, 1000); // Store the interval ID
+  }
+});
+
+document.querySelector('#stop').addEventListener('click', () => {
+  clearInterval(colorChangeInterval); // Clear the interval using the stored ID
+  colorChangeInterval = null; // Reset the variable to indicate that color change has stopped
+});
+
+
+
+  </script>
+  
+</body>
+</html>
