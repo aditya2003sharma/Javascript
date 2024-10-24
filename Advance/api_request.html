@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image and Followers</title>
+</head>
+<body>
+  <h2>Profile</h2>
+  <div id="profile">
+    <img id="profile-image" alt="Profile Image" width="150" height="150">
+    <p id="followers-count">Followers: </p>
+  </div>
+
+  <script>
+    const requesturl = "https://api.github.com/users/aditya2003sharma"; // Replace with actual API URL
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requesturl, true);
+
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        const response = JSON.parse(xhr.responseText);
+
+        // Assuming the response contains imageUrl and followers fields
+        const imageUrl = response.avatar_url;
+        const followers = response.followers;
+
+        // Set image source and followers count
+        document.getElementById('profile-image').src = imageUrl;
+        document.getElementById('followers-count').textContent = 'Followers: ' + followers;
+      } else {
+        console.error('Error loading the API');
+      }
+    };
+
+    xhr.onerror = function () {
+      console.error('Request failed');
+    };
+
+    xhr.send();
+  </script>
+</body>
+</html>
